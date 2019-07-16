@@ -1,0 +1,90 @@
+#include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
+
+using namespace std;
+int main() {
+	int sta;
+int sum=0;
+int inc=1;
+int min=0;
+long l=-10000000;
+    int m,n;
+    int mat[100][100];
+    int ot[100][100];
+    cin>>m>>n;
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            cin>>mat[i][j];
+            sum=sum+mat[i][j];
+        }
+    }
+for(int i=0;i<m;i++)
+{
+    for(int j=0;j<n;j++)
+    {
+        if(mat[i][j]<min)
+        {
+            min=mat[i][j];
+        }
+    }
+}
+
+    for(int k=min;k<sum;k++)
+    {
+  	
+
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+           if(k==mat[i][j])
+           {
+               ot[i][j]=inc;
+              sta=sta+1; 
+               
+           }
+        }
+    }
+    if(sta!=0)
+    {
+    	inc=inc+1;
+    	sta=0;
+	}
+    
+    }
+
+    for(int i=0;i<m;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            cout<<ot[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+
+    
+    return 0;
+}
+
